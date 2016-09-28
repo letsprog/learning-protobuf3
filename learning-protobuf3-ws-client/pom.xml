@@ -40,42 +40,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.5.0</version>
-				<executions>
-					<execution>
-						<id>protobuf3-batch</id>
-						<phase>install</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>${basedir}\src\main\resources\compile-proto.bat</executable>
-							<arguments>
-								<!-- protoc.exe directory -->
-								<argument>C:\dev\protobuf\protoc-3.0.0-win32\bin</argument>
-								<!-- proto definition directory -->
-								<argument>${basedir}\src\main\resources</argument>
-								<!-- proto definition file name -->
-								<argument>universe.proto</argument>
-								<!-- package root directory -->
-								<argument>${basedir}\target\generated</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 	</build>
 
