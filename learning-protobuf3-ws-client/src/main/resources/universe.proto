@@ -1,0 +1,35 @@
+syntax = "proto3"; // We can choose either proto2 either proto3
+package handsonprotobuf;
+
+option java_package = "com.letsprog.learning.protobuf3.model";
+option java_outer_classname = "Universe";
+
+message Planet {
+  string name = 1;
+  int64 diameter = 2; // long, Unit : km
+  float rotationPeriod = 3; // Unit : Earth Hour 
+  PlanetType type = 4;
+  repeated Moon moon = 5;
+  
+  enum PlanetType {
+    ROCKY = 0;
+    GASEOUS = 1;
+  }
+
+  message Moon {
+    string name = 1;
+    string description = 2;
+  }
+  
+}
+
+message Star {
+  string name = 1;
+  float age = 2; // Unit : 1 Billion Year
+  repeated Planet planet = 3;
+}
+
+message Galaxy {
+  string name = 1;
+  repeated Star star = 2;
+}
