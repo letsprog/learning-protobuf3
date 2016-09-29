@@ -42,7 +42,7 @@
 							<executable>${basedir}\src\main\resources\generator\compile-proto.bat</executable>
 							<arguments>
 								<!-- protoc.exe directory -->
-								<argument>C:\dev\protobuf\protoc-3.0.0-win32\bin</argument>
+								<argument>C:\dev\protobuf\protoc-3.0.0-win32</argument>
 								<!-- proto definition directory -->
 								<argument>${basedir}\src\main\resources\generator</argument>
 								<!-- proto definition file name -->
