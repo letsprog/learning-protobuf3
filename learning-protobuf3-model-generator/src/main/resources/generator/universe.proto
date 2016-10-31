@@ -1,7 +1,7 @@
 syntax = "proto3"; // We can choose either proto2 either proto3
 package handsonprotobuf;
 
-option java_package = "com.letsprog.learning.protobuf3.model";
+option java_package = "com.letsprog.learning.protobuf3.dto";
 option java_outer_classname = "Universe";
 
 message Planet {

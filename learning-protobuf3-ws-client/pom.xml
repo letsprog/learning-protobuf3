@@ -20,6 +20,7 @@
 			<version>2.12</version>
 		</dependency>
 
+		<!-- Dependency required for using InputStream which will hold the Protobuf stream -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>

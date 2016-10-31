@@ -7,8 +7,8 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.commons.io.IOUtils;
 
+import com.letsprog.learning.protobuf3.dto.Universe.Galaxy;
 import com.letsprog.learning.protobuf3.dummyfactories.MilkyWayFactory;
-import com.letsprog.learning.protobuf3.model.Universe.Galaxy;
 
 public class WSClientConsumingProtobuf {
 

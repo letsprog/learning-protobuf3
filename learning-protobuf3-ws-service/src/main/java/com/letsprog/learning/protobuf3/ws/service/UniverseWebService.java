@@ -12,15 +12,12 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.letsprog.learning.protobuf3.dto.Universe.Galaxy;
 import com.letsprog.learning.protobuf3.dummyfactories.MilkyWayFactory;
-import com.letsprog.learning.protobuf3.model.Universe.Galaxy;
 
 @Stateless
 @Path("/universe")
 public class UniverseWebService {
-
-
-	
 
 	@GET
 	@Path("/{galaxy}")

@@ -3,11 +3,11 @@ package com.letsprog.learning.protobuf3.dummyfactories;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.letsprog.learning.protobuf3.model.Universe.Galaxy;
-import com.letsprog.learning.protobuf3.model.Universe.Planet;
-import com.letsprog.learning.protobuf3.model.Universe.Planet.Moon;
-import com.letsprog.learning.protobuf3.model.Universe.Planet.PlanetType;
-import com.letsprog.learning.protobuf3.model.Universe.Star;
+import com.letsprog.learning.protobuf3.dto.Universe.Galaxy;
+import com.letsprog.learning.protobuf3.dto.Universe.Planet;
+import com.letsprog.learning.protobuf3.dto.Universe.Planet.Moon;
+import com.letsprog.learning.protobuf3.dto.Universe.Planet.PlanetType;
+import com.letsprog.learning.protobuf3.dto.Universe.Star;
 
 public class MilkyWayFactory {
 

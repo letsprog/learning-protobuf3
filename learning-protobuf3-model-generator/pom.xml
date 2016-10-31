@@ -27,6 +27,8 @@
 				</configuration>
 			</plugin>
 
+			<!-- Executing compile-proto.bat which parameterize protoc.exe program -->
+			<!-- passing the definition file universe.proto full path, input directory and output directory  -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -41,20 +43,27 @@
 						<configuration>
 							<executable>${basedir}\src\main\resources\generator\compile-proto.bat</executable>
 							<arguments>
+							
 								<!-- protoc.exe directory -->
+								<!-- You can include protoc.exe in the environment variable PATH -->
 								<argument>C:\dev\protobuf\protoc-3.0.0-win32</argument>
+								
 								<!-- proto definition directory -->
 								<argument>${basedir}\src\main\resources\generator</argument>
+								
 								<!-- proto definition file name -->
 								<argument>universe.proto</argument>
+								
 								<!-- package root directory -->
 								<argument>${basedir}\target\generated</argument>
+								
 							</arguments>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 
+			<!-- Adding the generated Java classes as sources to be included in compile phase and so packaged in the JAR file -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -75,6 +84,8 @@
 				</executions>
 			</plugin>
 
+			<!-- Excluding the generator folder from the packaged JAR file --> 
+			<!-- and keeping only generated .class files -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -88,10 +99,15 @@
 
 		</plugins>
 
-		<!-- Plugin execution not covered by lifecycle configuration: org.codehaus.mojo:exec-maven-plugin:1.5.0:java 
-			(execution: protobuf3-batch, phase: generate-sources) -->
+		
 		<pluginManagement>
 			<plugins>
+				
+				<!-- Plugin executions not covered by lifecycle configuration:			-->
+				<!-- 	org.codehaus.mojo:exec-maven-plugin:1.5.0:java					-->
+				<!-- 		=> (execution: protobuf3-batch, phase: generate-sources)	-->
+				<!-- 	org.codehaus.mojo:build-helper-maven-plugin:1.12				-->
+				<!-- 		=> (execution: add-source, phase: generate-sources)			-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -99,6 +115,7 @@
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
+							
 								<pluginExecution>
 									<pluginExecutionFilter>
 										<groupId>org.codehaus.mojo</groupId>
@@ -112,6 +129,7 @@
 										<ignore />
 									</action>
 								</pluginExecution>
+								
 								<pluginExecution>
 									<pluginExecutionFilter>
 										<groupId>org.codehaus.mojo</groupId>
@@ -125,6 +143,7 @@
 										<ignore />
 									</action>
 								</pluginExecution>
+								
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
@@ -132,8 +151,6 @@
 			</plugins>
 		</pluginManagement>
 
-
 	</build>
-
 
 </project>
